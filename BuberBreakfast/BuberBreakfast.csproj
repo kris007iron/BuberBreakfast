@@ -7,18 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Docs\**" />
-    <Content Remove="Docs\**" />
-    <EmbeddedResource Remove="Docs\**" />
-    <None Remove="Docs\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.3" />    
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\BuberBreakfast.Contracts\BuberBreakfast.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
