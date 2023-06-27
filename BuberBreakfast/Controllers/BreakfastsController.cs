@@ -32,7 +32,9 @@ namespace BuberBreakfast.Controllers
         [HttpPut("{id:guid}")]
         public IActionResult UpsertBreakfast(Guid id , UpsertBreakfastRequest request)
         {
-            return Ok(id);
+            var breakfast = new Breakfast(id, request.Name, request.Description, request.StartDateTime, request.EndDateTime, DateTime.UtcNow, request.Savory, request.Sweet);
+            _breakfastService.UpsertBreakfast(breakfast);
+            return NoContent();
         }
         [HttpDelete("{id:guid}")]
         public IActionResult DeleteBreakfast(Guid id)
