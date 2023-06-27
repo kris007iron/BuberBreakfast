@@ -25,7 +25,9 @@ namespace BuberBreakfast.Controllers
         [HttpGet("{id:guid}")]
         public IActionResult GetBreakfast(Guid id)
         {
-            return Ok(id);
+            Breakfast breakfast = _breakfastService.GetBreakfast(id);
+            var response = new BreakfastResponse(breakfast.Id, breakfast.Name, breakfast.Description, breakfast.StartDateTime, breakfast.EndDateTime, breakfast.LastModifiedDateTime, breakfast.Savory, breakfast.Sweet);
+            return Ok(response);
         }
         [HttpPut("{id:guid}")]
         public IActionResult UpsertBreakfast(Guid id , UpsertBreakfastRequest request)
