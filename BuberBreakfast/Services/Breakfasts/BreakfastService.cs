@@ -11,6 +11,11 @@ namespace BuberBreakfast.Services.Breakfasts
             _breakfasts.Add(breakfast.Id, breakfast);
         }
 
+        public void DeleteBreakfast(Guid id)
+        {
+            _breakfasts.Remove(id);
+        }
+
         public Breakfast GetBreakfast(Guid id)
         {
             return _breakfasts[id];
@@ -18,7 +23,7 @@ namespace BuberBreakfast.Services.Breakfasts
 
         public void UpsertBreakfast(Breakfast breakfast)
         {
-            throw new NotImplementedException();
+            _breakfasts[breakfast.Id] = breakfast;
         }
     }
 }
