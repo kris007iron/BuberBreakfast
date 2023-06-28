@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BuberBreakfast.Contracts.Breakfast
 {
+    //Response structure
     public record BreakfastResponse(
         Guid Id,
         string Name,
