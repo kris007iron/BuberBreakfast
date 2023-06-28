@@ -19,8 +19,14 @@ public class ApiController : ControllerBase
                 modelStateDictionary.AddModelError(error.Code, error.Description);
             }
 
-            return ValidationProblem();
+            return ValidationProblem(modelStateDictionary);
         }
+
+        if (errors.Any(e => e.Type == ErrorType.Unexpected))
+        {
+            return Problem();
+        }
+
         var firstError = errors[0];
 
         var statusCode = firstError.Type switch
