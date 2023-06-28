@@ -4,6 +4,7 @@ namespace BuberBreakfast.ServicesErrors;
 
 public static class Errors
 {
+    //Custom error implementation for validation specific requests
     public static class Breakfast
     {
         public static Error InvalidName => Error.Validation(

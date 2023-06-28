@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BuberBreakfast.Contracts.Breakfast
 {
+    //Structure when updating record note that the las mod time is provided by Controller
     public record UpsertBreakfastRequest(
         string Name,
         string Description,

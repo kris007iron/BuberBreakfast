@@ -4,6 +4,7 @@ using ErrorOr;
 
 namespace BuberBreakfast.Services.Breakfasts
 {
+    //Implementation of interface the methods names speek for themself
     public class BreakfastService : IBreakfastService
     {
         private static readonly Dictionary<Guid, Breakfast> _breakfasts = new();
