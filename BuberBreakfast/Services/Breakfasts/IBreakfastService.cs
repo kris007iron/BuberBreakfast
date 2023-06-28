@@ -3,6 +3,7 @@ using ErrorOr;
 
 namespace BuberBreakfast.Services.Breakfasts
 {
+    //Service interface is just element of abstraction
     public interface IBreakfastService
     {
         ErrorOr<Created> CreateBreakfast(Breakfast breakfast);
