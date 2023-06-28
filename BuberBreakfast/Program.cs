@@ -8,7 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 {
+    //This eneables our custom error handler
     app.UseExceptionHandler("/error");
+    
     app.UseHttpsRedirection();
     app.MapControllers();
     app.Run();
